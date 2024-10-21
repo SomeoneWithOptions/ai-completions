@@ -125,7 +125,7 @@ func AskProgrammingQuestion(userMessage string) (string, error) {
 	requestBody := map[string]interface{}{
 		"model":      "claude-3-5-sonnet-20240620",
 		"max_tokens": 1024,
-		"system":     "you are an expert software and devops engineer, give short  and concice answers  excep if explicitly asked for explainations ",
+		"system":     "you are an expert software and devops engineer, give short and concise answers except if explicitly asked for explanations",
 		"messages": []map[string]string{
 			{
 				"role":    "user",
