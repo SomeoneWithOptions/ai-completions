@@ -78,7 +78,15 @@ func CheckText(userMessage string) (string, error) {
 	requestBody := map[string]interface{}{
 		"model":      "claude-3-haiku-20240307",
 		"max_tokens": 1024,
-		"system":     "Check the text for spelling, grammar, capitalization and readability, do not display any text besides the corrected text. Make sure there is no other text other than the corrected text in your response.",
+		"system": `Return only the enhanced version of the input text with the following improvements:
+1. Fix spelling and grammar errors
+2. Improve word choice with more precise and sophisticated vocabulary where appropriate
+3. Correct capitalization and punctuation
+4. Enhance sentence structure for better readability
+4. Format paragraphs properly
+
+Do not include any explanations, comments, or other text besides the corrected version. Output only the improved text.`,
+
 		"messages": []map[string]string{
 			{
 				"role":    "user",
