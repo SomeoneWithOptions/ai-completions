@@ -36,13 +36,12 @@ func main() {
 	var input string
 
 	for _, arg := range os.Args[1:] {
-		if strings.Contains(arg, "-") {
+		if strings.Contains(arg, "-") && len(arg) < 3 {
 			flags = append(flags, arg)
 			continue
 		}
 		input = arg
 		break
-
 	}
 
 	switch {
@@ -63,7 +62,6 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-
 		fmt.Println(t)
 	}
 
